@@ -6,6 +6,7 @@ import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import cors from 'cors';
 import connectDB from './config/db.js';
 dotenv.config();
 
@@ -15,6 +16,7 @@ connectDB();
   const __dirname = path.resolve();
 
 const app = express();
+app.use(cors());
 
 //this will allow json as input of this server so that we can send the body from 
 //insomnia api testing tool and we can see the results in terminal.
